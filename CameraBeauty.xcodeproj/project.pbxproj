@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5341BA021DEB2FC0000D2763 /* libFaceBeautyLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5341BA011DEB2FC0000D2763 /* libFaceBeautyLib.a */; };
-		5341BA051DEB2FE0000D2763 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5341BA041DEB2FE0000D2763 /* opencv2.framework */; };
 		5376A4381DEC6E460038497B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5376A4371DEC6E460038497B /* InfoPlist.strings */; };
+		53D215B921C52FEC00D9F115 /* BeautyAlgo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53D215B621C52FEC00D9F115 /* BeautyAlgo.cpp */; };
+		53D215BA21C52FEC00D9F115 /* MyBeauty.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 53D215B821C52FEC00D9F115 /* MyBeauty.cpp */; };
 		53DA2A151A4986A5005D0845 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DA2A141A4986A5005D0845 /* main.m */; };
 		53DA2A181A4986A5005D0845 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DA2A171A4986A5005D0845 /* AppDelegate.m */; };
 		53DA2A1B1A4986A5005D0845 /* OnLineFaceRecog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53DA2A191A4986A5005D0845 /* OnLineFaceRecog.xcdatamodeld */; };
@@ -32,11 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5341BA011DEB2FC0000D2763 /* libFaceBeautyLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFaceBeautyLib.a; sourceTree = "<group>"; };
 		5341BA031DEB2FCB000D2763 /* MyBeauty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBeauty.h; sourceTree = "<group>"; };
-		5341BA041DEB2FE0000D2763 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		5376A4371DEC6E460038497B /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		53B80F1F1A98BFF100108944 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
+		53D215B621C52FEC00D9F115 /* BeautyAlgo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BeautyAlgo.cpp; sourceTree = "<group>"; };
+		53D215B721C52FEC00D9F115 /* BeautyAlgo.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BeautyAlgo.hpp; sourceTree = "<group>"; };
+		53D215B821C52FEC00D9F115 /* MyBeauty.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyBeauty.cpp; sourceTree = "<group>"; };
 		53DA2A0F1A4986A5005D0845 /* CameraBeauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraBeauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DA2A131A4986A5005D0845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53DA2A141A4986A5005D0845 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -76,8 +77,6 @@
 				53DBF3C21A4C2C0C00BCF271 /* QuartzCore.framework in Frameworks */,
 				53DBF3BB1A4C2C0C00BCF271 /* CoreGraphics.framework in Frameworks */,
 				53DBF3B81A4C2C0C00BCF271 /* Accelerate.framework in Frameworks */,
-				5341BA051DEB2FE0000D2763 /* opencv2.framework in Frameworks */,
-				5341BA021DEB2FC0000D2763 /* libFaceBeautyLib.a in Frameworks */,
 				53DBF3BC1A4C2C0C00BCF271 /* CoreImage.framework in Frameworks */,
 				53DBF3B91A4C2C0C00BCF271 /* AssetsLibrary.framework in Frameworks */,
 				53DBF3BA1A4C2C0C00BCF271 /* AVFoundation.framework in Frameworks */,
@@ -91,9 +90,10 @@
 		53DA2A061A4986A5005D0845 = {
 			isa = PBXGroup;
 			children = (
-				5341BA041DEB2FE0000D2763 /* opencv2.framework */,
+				53D215B621C52FEC00D9F115 /* BeautyAlgo.cpp */,
+				53D215B721C52FEC00D9F115 /* BeautyAlgo.hpp */,
 				5341BA031DEB2FCB000D2763 /* MyBeauty.h */,
-				5341BA011DEB2FC0000D2763 /* libFaceBeautyLib.a */,
+				53D215B821C52FEC00D9F115 /* MyBeauty.cpp */,
 				53DBF3AB1A4C2BFA00BCF271 /* Framework */,
 				53DA2A111A4986A5005D0845 /* OnLineFaceRecog */,
 				53DA2A101A4986A5005D0845 /* Products */,
@@ -240,8 +240,10 @@
 			files = (
 				53DBF3CD1A4C34D200BCF271 /* UIImageCVMatConverter.mm in Sources */,
 				53DA2A1B1A4986A5005D0845 /* OnLineFaceRecog.xcdatamodeld in Sources */,
+				53D215B921C52FEC00D9F115 /* BeautyAlgo.cpp in Sources */,
 				53DA2A181A4986A5005D0845 /* AppDelegate.m in Sources */,
 				53DA2A1E1A4986A5005D0845 /* ViewController.mm in Sources */,
+				53D215BA21C52FEC00D9F115 /* MyBeauty.cpp in Sources */,
 				53DA2A151A4986A5005D0845 /* main.m in Sources */,
 				53E633901A8AF2EC006673E2 /* VideoProcess.m in Sources */,
 			);
@@ -359,13 +361,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9J23FT5E98;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/\"";
 				GCC_PREFIX_HEADER = "${SRCROOT}/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = OnLineFaceRecog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
+				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.v5.CameraBeauty;
@@ -382,13 +384,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9J23FT5E98;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/\"";
 				GCC_PREFIX_HEADER = "${SRCROOT}/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = OnLineFaceRecog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.v5.CameraBeauty;
 				PRODUCT_NAME = CameraBeauty;
